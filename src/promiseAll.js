@@ -1,20 +1,7 @@
-var promise1 = new Promise((resolve, reject) => {
-    setTimeout(() => {
-        resolve(1);
-    }, 1000);
-});
-
-var promise2 = new Promise((resolve, reject) => {
-    setTimeout(() => {
-        reject(new Error('An unexpected error happened (promise2)'));
-    }, 3000);
-});
-
-var promise3 = new Promise((resolve, reject) => {
-    setTimeout(() => {
-        resolve(3);
-    }, 2000);
-});
+const promises = require('./promises');
+var promise1 = promises.promise1;
+var promise2 = promises.promise2;
+var promise3 = promises.promise3;
 
 // Promise all success
 Promise.all([promise1, promise3])
